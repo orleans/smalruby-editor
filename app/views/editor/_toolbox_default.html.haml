@@ -306,6 +306,9 @@
     -# [▼キャラクター]にぶつかったとき
     %block{:type => "#{category}_on_hit"}
 
+    -# [▼イベント]を送る
+    %block{:type => '#{category}_broadcast'}
+
   - category = 'control'
   %category{:name => tt('.control')}
     -# (　)秒待つ

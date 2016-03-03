@@ -79,3 +79,21 @@ Blockly.Blocks['<%= n %>'] =
 Blockly.Ruby['<%= n %>'] = (block) ->
   char = @getCharacterFieldValue()
   Blockly.Ruby.characterEvent_(block, 'DO', 'hit', char)
+
+# [▼イベント]を送る
+<% n = '#{category}_broadcast' %>
+Blockly.Blocks['<%= n %>'] =
+  init: ()->
+    @setHelpUrl('')
+    @setColour(<%= color %>)
+    @interpolateMsg(<%= bm('.broadcast') %>,
+                    ['TEXT', null, Blockly.ALIGN_RIGHT],
+                    Blockly.ALIGN_RIGHT)
+    @setInputsInline(true)
+    @setPreviousStatement(true)
+    @setNextStatement(true)
+    @setTooltip('')
+
+Blockly.Ruby['<%= n %>'] = (block) ->
+  text = Blockly.Ruby.valueToCode(@, 'TEXT', Blockly.Ruby.ORDER_NONE) || Blockly.Ruby.quote_('')
+  Blockly.Ruby.characterMethodCall_('broadcast', "message: #{text}")

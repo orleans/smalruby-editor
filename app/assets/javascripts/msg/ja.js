@@ -122,6 +122,7 @@ Blockly.Msg.BLOCKS_EVENTS_ON_START = '♣実行ボタンがクリックされた
 Blockly.Msg.BLOCKS_EVENTS_ON_KEY_PUSH_OR_DOWN = '♣キーボードの %1 が %2 とき';
 Blockly.Msg.BLOCKS_EVENTS_ON_CLICK = '♣キャラクターがクリックされたとき';
 Blockly.Msg.BLOCKS_EVENTS_ON_HIT = '♣%1 にぶつかったとき';
+Blockly.Msg.BLOCKS_EVENTS_BROADCAST = '%1 を送る';
 
 
 // blocks/sensing.js.coffee.erb
