@@ -264,6 +264,7 @@
 
   - category = 'sound'
   %category{:name => tt('.sound')}
+
     -# [▼プリセット音声]の音を鳴らす
     %block{:type => "#{category}_play"}
       %value{:name => 'NAME'}
@@ -306,8 +307,19 @@
     -# [▼キャラクター]にぶつかったとき
     %block{:type => "#{category}_on_hit"}
 
-    -# [▼イベント]を送る
+    -# [▼メッセージ]を受け取ったとき
+    %block{:type => '#{category}_when_i_receive'}
+      %value{:name => 'NAME'}
+        %block{:type => "#{category}_messages"}
+
+    -# [▼メッセージ]を送る
     %block{:type => '#{category}_broadcast'}
+      %value{:name => 'NAME'}
+        %block{:type => "#{category}_messages"}
+
+    -# [▼メッセージ]を送って、待つ
+    -#%block{:type => '#{category}_broadcast_and_wait'}
+    -# = toolbox_text_value('TEXT', tt('.message'))
 
   - category = 'control'
   %category{:name => tt('.control')}

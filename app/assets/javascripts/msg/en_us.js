@@ -118,7 +118,12 @@ Blockly.Msg.BLOCKS_EVENTS_ON_START = 'when Run clicked';
 Blockly.Msg.BLOCKS_EVENTS_ON_KEY_PUSH_OR_DOWN = 'when %1 key %2';
 Blockly.Msg.BLOCKS_EVENTS_ON_CLICK = 'when this sprite clicked';
 Blockly.Msg.BLOCKS_EVENTS_ON_HIT = 'when %1 hit';
+Blockly.Msg.BLOCKS_EVENTS_MESSAGES = '%1';
+Blockly.Msg.BLOCKS_EVENTS_MESSAGES1 = 'message1';
+Blockly.Msg.BLOCKS_EVENTS_MESSAGES2 = 'message2';
+Blockly.Msg.BLOCKS_EVENTS_WHEN_I_RECEIVE = 'when I receive %1';
 Blockly.Msg.BLOCKS_EVENTS_BROADCAST = 'broadcast %1';
+// Blockly.Msg.BLOCKS_EVENTS_BROADCAST_AND_WAIT = 'broadcast %1 and wait';
 
 
 // blocks/sensing.js.coffee.erb

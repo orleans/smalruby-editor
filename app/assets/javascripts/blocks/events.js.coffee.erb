@@ -80,14 +80,52 @@ Blockly.Ruby['<%= n %>'] = (block) ->
   char = @getCharacterFieldValue()
   Blockly.Ruby.characterEvent_(block, 'DO', 'hit', char)
 
-# [▼イベント]を送る
+# [▼メッセージ]
+<% n = "#{category}_messages" %>
+Blockly.Blocks['<%= n %>'] =
+  init: ()->
+    sounds = [
+      [<%= bm('.messages1') %>, 'messages1'],
+      [<%= bm('.messages2') %>, 'messages2'],
+    ]
+    @setHelpUrl('')
+    @setColour(<%= color %>)
+    @interpolateMsg(<%= bm('.messages') %>,
+                    ['NAME', new Blockly.FieldDropdown(sounds)],
+                    Blockly.ALIGN_RIGHT)
+    @setOutput(true, 'String')
+    @setTooltip('')
+
+Blockly.Ruby['<%= n %>'] = (block) ->
+  code = Blockly.Ruby.quote_(@getFieldValue('NAME'))
+  [code, Blockly.Ruby.ORDER_ATOMIC]
+
+# [▼メッセージ]を受け取ったとき
+<% n = '#{category}_when_i_receive' %>
+Blockly.Blocks['<%= n %>'] =
+  init: ()->
+    @setHelpUrl('')
+    @setColour(<%= color %>)
+    @interpolateMsg(<%= bm('.when_i_receive') %>,
+                    ['NAME', ['String'], Blockly.ALIGN_RIGHT],
+                    Blockly.ALIGN_RIGHT)
+    @appendStatementInput('DO')
+    @setPreviousStatement(true)
+    @setNextStatement(true)
+    @setTooltip('')
+
+Blockly.Ruby['<%= n %>'] = (block) ->
+  arg = Blockly.Ruby.valueToCode(@, 'NAME', Blockly.Ruby.ORDER_NONE) || ''
+  Blockly.Ruby.characterEvent_(block, 'DO', 'receive', arg)
+
+# [▼メッセージ]を送る
 <% n = '#{category}_broadcast' %>
 Blockly.Blocks['<%= n %>'] =
   init: ()->
     @setHelpUrl('')
     @setColour(<%= color %>)
     @interpolateMsg(<%= bm('.broadcast') %>,
-                    ['TEXT', null, Blockly.ALIGN_RIGHT],
+                    ['NAME', ['String'], Blockly.ALIGN_RIGHT],
                     Blockly.ALIGN_RIGHT)
     @setInputsInline(true)
     @setPreviousStatement(true)
@@ -95,5 +133,5 @@ Blockly.Blocks['<%= n %>'] =
     @setTooltip('')
 
 Blockly.Ruby['<%= n %>'] = (block) ->
-  text = Blockly.Ruby.valueToCode(@, 'TEXT', Blockly.Ruby.ORDER_NONE) || Blockly.Ruby.quote_('')
-  Blockly.Ruby.characterMethodCall_('broadcast', "message: #{text}")
+  arg = Blockly.Ruby.valueToCode(@, 'NAME', Blockly.Ruby.ORDER_NONE) || ''
+  Blockly.Ruby.characterMethodCall_('broadcast', arg)

@@ -68,6 +68,7 @@ en:
       hello: "Hello!"
       world: "world"
       text: "text"
+      message: "message"
 
     character_modal:
       name: "Name"

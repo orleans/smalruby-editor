@@ -122,7 +122,12 @@ Blockly.Msg.BLOCKS_EVENTS_ON_START = '♣実行ボタンがクリックされた
 Blockly.Msg.BLOCKS_EVENTS_ON_KEY_PUSH_OR_DOWN = '♣キーボードの %1 が %2 とき';
 Blockly.Msg.BLOCKS_EVENTS_ON_CLICK = '♣キャラクターがクリックされたとき';
 Blockly.Msg.BLOCKS_EVENTS_ON_HIT = '♣%1 にぶつかったとき';
-Blockly.Msg.BLOCKS_EVENTS_BROADCAST = '%1 を送る';
+Blockly.Msg.BLOCKS_EVENTS_MESSAGES = '%1';
+Blockly.Msg.BLOCKS_EVENTS_MESSAGES1 = 'メッセージ1';
+Blockly.Msg.BLOCKS_EVENTS_MESSAGES2 = 'メッセージ2'
+Blockly.Msg.BLOCKS_EVENTS_WHEN_I_RECEIVE = '♣%1 を受け取ったとき';
+Blockly.Msg.BLOCKS_EVENTS_BROADCAST = '♣%1 を送る';
+// Blockly.Msg.BLOCKS_EVENTS_BROADCAST_AND_WAIT = '♣%1 を送って、待つ';
 
 
 // blocks/sensing.js.coffee.erb
