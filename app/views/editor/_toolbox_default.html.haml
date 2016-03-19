@@ -309,13 +309,11 @@
 
     -# [▼メッセージ]を受け取ったとき
     %block{:type => '#{category}_when_i_receive'}
-      %value{:name => 'NAME'}
-        %block{:type => "#{category}_messages"}
+      = toolbox_text_value('TEXT', tt('.text'))
 
     -# [▼メッセージ]を送る
     %block{:type => '#{category}_broadcast'}
-      %value{:name => 'NAME'}
-        %block{:type => "#{category}_messages"}
+      = toolbox_text_value('TEXT', tt('.text'))
 
     -# [▼メッセージ]を送って、待つ
     -#%block{:type => '#{category}_broadcast_and_wait'}

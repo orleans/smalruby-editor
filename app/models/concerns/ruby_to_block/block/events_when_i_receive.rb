@@ -2,8 +2,11 @@
 module RubyToBlock
   module Block
     class EventBroadcast < CharacterEvent
-      blocknize '^\s*' + CHAR_RE + 'on\(:receive,\s*("[^"),]*")\)\s+do\s*$',
-                statement: true, indent: true
+      blocknize ['^\s*',
+                 CHAR_RE,
+                 'on\(:receive,\s*("[^"),]*")\)\s+do',
+                 '\s*$'].join(''),
+                 statement: true, indent: true
 
       def self.process_match_data(md, context)
         md2 = regexp.match(md[type])

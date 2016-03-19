@@ -107,7 +107,7 @@ Blockly.Blocks['<%= n %>'] =
     @setHelpUrl('')
     @setColour(<%= color %>)
     @interpolateMsg(<%= bm('.when_i_receive') %>,
-                    ['NAME', ['String'], Blockly.ALIGN_RIGHT],
+                    ['TEXT', null, Blockly.ALIGN_RIGHT],
                     Blockly.ALIGN_RIGHT)
     @appendStatementInput('DO')
     @setPreviousStatement(true)
@@ -115,7 +115,7 @@ Blockly.Blocks['<%= n %>'] =
     @setTooltip('')
 
 Blockly.Ruby['<%= n %>'] = (block) ->
-  arg = Blockly.Ruby.valueToCode(@, 'NAME', Blockly.Ruby.ORDER_NONE) || ''
+  arg = Blockly.Ruby.valueToCode(@, 'TEXT', Blockly.Ruby.ORDER_NONE) || ''
   Blockly.Ruby.characterEvent_(block, 'DO', 'receive', arg)
 
 # [▼メッセージ]を送る
@@ -125,7 +125,7 @@ Blockly.Blocks['<%= n %>'] =
     @setHelpUrl('')
     @setColour(<%= color %>)
     @interpolateMsg(<%= bm('.broadcast') %>,
-                    ['NAME', ['String'], Blockly.ALIGN_RIGHT],
+                    ['TEXT', null, Blockly.ALIGN_RIGHT],
                     Blockly.ALIGN_RIGHT)
     @setInputsInline(true)
     @setPreviousStatement(true)
@@ -133,5 +133,5 @@ Blockly.Blocks['<%= n %>'] =
     @setTooltip('')
 
 Blockly.Ruby['<%= n %>'] = (block) ->
-  arg = Blockly.Ruby.valueToCode(@, 'NAME', Blockly.Ruby.ORDER_NONE) || ''
+  arg = Blockly.Ruby.valueToCode(@, 'TEXT', Blockly.Ruby.ORDER_NONE) || ''
   Blockly.Ruby.characterMethodCall_('broadcast', arg)
