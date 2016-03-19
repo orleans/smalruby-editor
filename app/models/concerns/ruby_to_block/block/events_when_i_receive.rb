@@ -7,7 +7,7 @@ module RubyToBlock
 
       def self.process_match_data(md, context)
         md2 = regexp.match(md[type])
-        add_character_event_blocks(context, md2[1], new, NAME: md[2])
+        add_character_event_blocks(context, md2[1], new, MESSAGE: md2[2])
         true
       end
     end

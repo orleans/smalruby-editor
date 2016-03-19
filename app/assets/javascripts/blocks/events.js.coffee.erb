@@ -84,14 +84,14 @@ Blockly.Ruby['<%= n %>'] = (block) ->
 <% n = "#{category}_messages" %>
 Blockly.Blocks['<%= n %>'] =
   init: ()->
-    sounds = [
+    messages = [
       [<%= bm('.messages1') %>, 'messages1'],
       [<%= bm('.messages2') %>, 'messages2'],
     ]
     @setHelpUrl('')
     @setColour(<%= color %>)
     @interpolateMsg(<%= bm('.messages') %>,
-                    ['NAME', new Blockly.FieldDropdown(sounds)],
+                    ['NAME', new Blockly.FieldDropdown(messages)],
                     Blockly.ALIGN_RIGHT)
     @setOutput(true, 'String')
     @setTooltip('')
